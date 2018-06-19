@@ -135,22 +135,22 @@
     // 
     // Usage:
     // 
-    // > jQuery('selector').bind( 'clickoutside', function(event) {
+    // > jQuery('selector').on( 'clickoutside', function(event) {
     // >   var clicked_elem = $(event.target);
     // >   ...
     // > });
     // 
-    // > jQuery('selector').bind( 'dblclickoutside', function(event) {
+    // > jQuery('selector').on( 'dblclickoutside', function(event) {
     // >   var double_clicked_elem = $(event.target);
     // >   ...
     // > });
     // 
-    // > jQuery('selector').bind( 'mouseoveroutside', function(event) {
+    // > jQuery('selector').on( 'mouseoveroutside', function(event) {
     // >   var moused_over_elem = $(event.target);
     // >   ...
     // > });
     // 
-    // > jQuery('selector').bind( 'focusoutside', function(event) {
+    // > jQuery('selector').on( 'focusoutside', function(event) {
     // >   var focused_elem = $(event.target);
     // >   ...
     // > });
@@ -170,7 +170,7 @@
         // If this is the first element getting the event bound, bind a handler
         // to document to catch all corresponding "originating" events.
         if ( elems.length === 1 ) {
-          $(doc).bind( event_namespaced, handle_event );
+          $(doc).on( event_namespaced, handle_event );
         }
       },
       
@@ -185,7 +185,7 @@
         // If this is the last element removed, remove the "originating" event
         // handler on document that powers this "outside" event.
         if ( elems.length === 0 ) {
-          $(doc).unbind( event_namespaced );
+          $(doc).off( event_namespaced );
         }
       },
       
